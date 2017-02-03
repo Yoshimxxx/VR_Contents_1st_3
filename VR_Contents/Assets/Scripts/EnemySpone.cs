@@ -34,7 +34,7 @@ public class EnemySpone : MonoBehaviour {
     {
         tagObjects = GameObject.FindGameObjectsWithTag(tagname);
         
-        if (tagObjects.Length <= 10)
+        if (tagObjects.Length <= 5)
         {
             createflag = false;
         }

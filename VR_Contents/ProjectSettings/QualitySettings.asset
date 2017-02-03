@@ -58,8 +58,8 @@ QualitySettings:
     asyncUploadTimeSlice: 2
     asyncUploadBufferSize: 4
     excludedTargetPlatforms:
-    - iPhone
     - Android
+    - iPhone
   - serializedVersion: 2
     name: Simple
     pixelLightCount: 1
