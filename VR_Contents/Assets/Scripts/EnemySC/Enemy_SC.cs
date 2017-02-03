@@ -6,6 +6,7 @@ public class Enemy_SC : MonoBehaviour {
     public int HP = 10;
     public float speed = 0.1f;//enemy move speed
     int firecycle_frame = 30; //reload time
+    public int MyScore=100;//エネミーの報酬スコア
 
     GameObject mynavi_trigger;
     triggerSC mynavi_triggerSC;
@@ -17,6 +18,7 @@ public class Enemy_SC : MonoBehaviour {
 
     public GameObject Marker;
     GameObject MarkerOBJ;//インスタンスしたマーカーの格納先
+    GameObject playerOBJ;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +26,7 @@ public class Enemy_SC : MonoBehaviour {
         targetobj = GameObject.FindWithTag("Player");
         mynavi_trigger = gameObject.transform.FindChild("Navi_trigger").gameObject;
         mynavi_triggerSC = mynavi_trigger.transform.GetComponent<triggerSC>();
+        playerOBJ = GameObject.Find("Player");
 
         MarkerOBJ = Instantiate(Marker, transform.position, new Quaternion(90, 0, 0, 0))as GameObject;
 	}
@@ -71,6 +74,8 @@ public class Enemy_SC : MonoBehaviour {
         if (HP <= 0)
         {
             Instantiate(bakuhatsu, transform.position, transform.rotation);
+            playerOBJ.gameObject.GetComponent<Player>().Score += MyScore;
+            Destroy(MarkerOBJ);
             Destroy(this.gameObject);
         }
     }

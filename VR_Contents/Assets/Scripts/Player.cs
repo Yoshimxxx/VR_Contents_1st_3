@@ -9,6 +9,7 @@ public class Player : MonoBehaviour {
     public float rotaF;
 
     public int HP=100;
+    public int Score = 0;
     public int rocktime=0;//ロックオン維持しているフレーム
 
     public int moveType = 0;
@@ -37,8 +38,8 @@ public class Player : MonoBehaviour {
     public AudioClip search, rockon;
 
     GameObject PlayerCanvas;//プレイヤー用Canvas
-    GameObject HPtext;//プレイヤーCanvasの各種UI
-    Text hp;//テキスト系UIの格納変数
+    GameObject HPtext,Scoretext;//プレイヤーCanvasの各種UI
+    Text hp,score;//テキスト系UIの格納変数
 
     Image Rockon;
 
@@ -67,9 +68,11 @@ public class Player : MonoBehaviour {
 
         PlayerCanvas = cameraObject.transform.FindChild("PlayerCanvas").gameObject;
         HPtext = PlayerCanvas.transform.FindChild("HPtext").gameObject;
+        Scoretext = PlayerCanvas.transform.FindChild("ScoreText").gameObject;
         Rockon = PlayerCanvas.transform.FindChild("RockonImage").gameObject.GetComponent<Image>();
 
         hp = HPtext.GetComponent<Text>();
+        score = Scoretext.GetComponent<Text>();
         Rockon.sprite = Rockon1;
         MarkerOBJ = Instantiate(Marker, transform.position, Quaternion.Euler(90, transform.eulerAngles.y, 0))as GameObject;
         RadarCamera = GameObject.FindWithTag("SubCamera");
@@ -84,11 +87,13 @@ public class Player : MonoBehaviour {
         {
             start = GameObject.Find("CreateComet").GetComponent<CreateComet>().startTF;
             hp.text = "準備中";
+            score.text = "敵を倒して報奨金を稼げ!";
         }
         else
         {
             playerMove.Move(cameraObject, speed, moveType, rotaF);
             hp.text = HP.ToString();
+            score.text ="$"+Score.ToString();
 
             if (stayFire < stayTime)
             {
