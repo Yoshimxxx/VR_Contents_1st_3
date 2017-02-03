@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692534, g: 0.49678725, b: 0.57508564, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692534, g: 0.49678725, b: 0.5750856, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1445,6 +1445,29 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012219318998, guid: 0d7ad10ed20f3224ba5cfa4345920cfb,
+        type: 2}
+      propertyPath: simple_bullet
+      value: 
+      objectReference: {fileID: 1000012018930340, guid: 25bfec4582bf18843ad49347dab09b8b,
+        type: 2}
+    - target: {fileID: 114000012219318998, guid: 0d7ad10ed20f3224ba5cfa4345920cfb,
+        type: 2}
+      propertyPath: Marker
+      value: 
+      objectReference: {fileID: 1000012481244384, guid: a43339e5e5775eb43a58e9071d1cf7e9,
+        type: 2}
+    - target: {fileID: 114000012219318998, guid: 0d7ad10ed20f3224ba5cfa4345920cfb,
+        type: 2}
+      propertyPath: kakoi
+      value: 
+      objectReference: {fileID: 1000013761751804, guid: ff152a6eb22a649478529b3d90ccb142,
+        type: 2}
+    - target: {fileID: 114000012219318998, guid: 0d7ad10ed20f3224ba5cfa4345920cfb,
+        type: 2}
+      propertyPath: hassyakou
+      value: 
+      objectReference: {fileID: 1451810921}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d7ad10ed20f3224ba5cfa4345920cfb, type: 2}
   m_IsPrefabParent: 0
@@ -1973,6 +1996,11 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!1 &1451810921 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000011825955314, guid: 0d7ad10ed20f3224ba5cfa4345920cfb,
+    type: 2}
+  m_PrefabInternal: {fileID: 931206296}
 --- !u!1 &1456704148
 GameObject:
   m_ObjectHideFlags: 0
@@ -2602,7 +2630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64895a1fd1c3524dbca887ff064108d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 1000010856772568, guid: 0d7ad10ed20f3224ba5cfa4345920cfb, type: 2}
+  Enemy: {fileID: 1979645309}
 --- !u!1 &1960994467
 GameObject:
   m_ObjectHideFlags: 0
@@ -2631,6 +2659,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1783971240}
   m_RootOrder: 5
+--- !u!1 &1979645309 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010856772568, guid: 0d7ad10ed20f3224ba5cfa4345920cfb,
+    type: 2}
+  m_PrefabInternal: {fileID: 931206296}
 --- !u!1 &2054626855
 GameObject:
   m_ObjectHideFlags: 0

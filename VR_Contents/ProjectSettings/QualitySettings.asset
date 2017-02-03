@@ -57,7 +57,9 @@ QualitySettings:
     particleRaycastBudget: 16
     asyncUploadTimeSlice: 2
     asyncUploadBufferSize: 4
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - iPhone
+    - Android
   - serializedVersion: 2
     name: Simple
     pixelLightCount: 1
@@ -85,6 +87,7 @@ QualitySettings:
     asyncUploadBufferSize: 4
     excludedTargetPlatforms:
     - Android
+    - iPhone
   - serializedVersion: 2
     name: Good
     pixelLightCount: 2
