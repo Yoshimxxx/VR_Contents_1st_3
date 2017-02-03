@@ -228,3 +228,5 @@ MonoBehaviour:
   hassyakou: {fileID: 1000012189123812}
   Marker: {fileID: 1000012481244384, guid: a43339e5e5775eb43a58e9071d1cf7e9, type: 2}
   kakoi: {fileID: 1000013761751804, guid: ff152a6eb22a649478529b3d90ccb142, type: 2}
+  Collision_flag: 0
+  lifetime: 60000

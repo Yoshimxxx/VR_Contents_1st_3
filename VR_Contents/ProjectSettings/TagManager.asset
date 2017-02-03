@@ -10,6 +10,7 @@ TagManager:
   - E_bullet
   - Missile
   - SubCamera
+  - comet
   layers:
   - Default
   - TransparentFX

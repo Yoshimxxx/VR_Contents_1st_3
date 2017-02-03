@@ -23,6 +23,10 @@ public class Enemy_SC : MonoBehaviour {
     GameObject maincamera;
     public GameObject kakoi;
     GameObject Mykakoi;
+    public bool Collision_flag =false;
+
+    public int lifetime;
+    int now_time;
 
 	// Use this for initialization
 	void Start () {
@@ -37,12 +41,17 @@ public class Enemy_SC : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (now_time >= lifetime)
+        {
+            Destroy(this.gameObject);
+        }
+
         if (mynavi_triggerSC.ontrigger == false)
         {
             transform.Translate(0, 0, speed);
         }else
         {
-            if (mynavi_triggerSC.collider_tag=="Player")
+            if (mynavi_triggerSC.collider_tag == "Player" || Vector3.Distance(transform.position, playerOBJ.transform.position)<=70);
             {
                 if (firecycle_frame % 30==0)
                 {
@@ -55,7 +64,7 @@ public class Enemy_SC : MonoBehaviour {
         this.transform.rotation = Quaternion.Slerp(this.transform.rotation, mynavi_trigger.transform.rotation, 0.1f);
         RadarMarker();
         //naviの値を元に戻す
-        
+        now_time++;
     }
 
     void RadarMarker()
@@ -68,6 +77,12 @@ public class Enemy_SC : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
+        Collision_flag = true;
+        if (collision.gameObject.tag == "comet")
+        {
+            Destroy(this.gameObject);
+        }
+
         if (collision.gameObject.tag == "P_bullet")
         {
             HP--;
