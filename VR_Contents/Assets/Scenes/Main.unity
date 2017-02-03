@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d26154dbcab004a41afebd199a1b6b3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: 90
+  target: 60
 --- !u!4 &126767519
 Transform:
   m_ObjectHideFlags: 0
@@ -1771,6 +1771,7 @@ GameObject:
   - 92: {fileID: 1362163532}
   - 124: {fileID: 1362163531}
   - 81: {fileID: 1362163530}
+  - 45: {fileID: 1362163529}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1794,6 +1795,14 @@ Transform:
   - {fileID: 1456704152}
   m_Father: {fileID: 1783971240}
   m_RootOrder: 3
+--- !u!45 &1362163529
+Skybox:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1362163527}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 7560ba73a092ede489b86a0b331abb88, type: 2}
 --- !u!81 &1362163530
 AudioListener:
   m_ObjectHideFlags: 0
