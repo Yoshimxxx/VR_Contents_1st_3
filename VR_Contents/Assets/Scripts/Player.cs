@@ -147,7 +147,6 @@ public class Player : MonoBehaviour {
         if (Physics.Raycast(ray, out hit)) {
             if (hit.collider.tag == "Enemy")//当たった物体がエネミー
             {
-                hit.transform.Rotate(0, 0, 20);
                 rocktime++;
                 if (rocktime > 100)//一定時間以上視点を合わせるとロックオン
                 {
