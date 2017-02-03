@@ -20,14 +20,18 @@ public class Enemy_SC : MonoBehaviour {
     GameObject MarkerOBJ;//インスタンスしたマーカーの格納先
     GameObject playerOBJ;
 
+    GameObject maincamera;
+    public GameObject kakoi;
+    GameObject Mykakoi;
+
 	// Use this for initialization
 	void Start () {
-
+        maincamera = GameObject.FindWithTag("MainCamera");
         targetobj = GameObject.FindWithTag("Player");
         mynavi_trigger = gameObject.transform.FindChild("Navi_trigger").gameObject;
         mynavi_triggerSC = mynavi_trigger.transform.GetComponent<triggerSC>();
         playerOBJ = GameObject.Find("Player");
-
+        Mykakoi = Instantiate(kakoi, transform.position, transform.rotation)as GameObject;
         MarkerOBJ = Instantiate(Marker, transform.position, new Quaternion(90, 0, 0, 0))as GameObject;
 	}
 	
@@ -58,6 +62,8 @@ public class Enemy_SC : MonoBehaviour {
     {
         MarkerOBJ.transform.position = transform.position;
         MarkerOBJ.transform.rotation = Quaternion.Euler(90, transform.eulerAngles.y, 0);
+        Mykakoi.transform.position = transform.position;
+        Mykakoi.transform.LookAt(maincamera.transform);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -75,6 +81,7 @@ public class Enemy_SC : MonoBehaviour {
         {
             Instantiate(bakuhatsu, transform.position, transform.rotation);
             playerOBJ.gameObject.GetComponent<Player>().Score += MyScore;
+            Destroy(Mykakoi);
             Destroy(MarkerOBJ);
             Destroy(this.gameObject);
         }

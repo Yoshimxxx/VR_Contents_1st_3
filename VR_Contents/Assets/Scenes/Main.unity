@@ -1693,6 +1693,7 @@ MonoBehaviour:
   Rockon1: {fileID: 21300000, guid: cad7b408203819f4cadefcba87b4005f, type: 3}
   Rockon2: {fileID: 21300000, guid: 7881e04bef33fb940b3f0480dab65f9d, type: 3}
   stayTime: 10
+  stayMT: 200
   cameraObject: {fileID: 0}
   camera: {fileID: 0}
   search: {fileID: 8300000, guid: 396818cb23b7b1e419de01a5f6fbdb21, type: 3}

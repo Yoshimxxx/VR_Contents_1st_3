@@ -26,6 +26,8 @@ public class Player : MonoBehaviour {
 
     private int stayFire;
     public int stayTime = 20;
+    private int stayMF;
+    public int stayMT=200;
 
     public GameObject cameraObject;
 
@@ -62,6 +64,7 @@ public class Player : MonoBehaviour {
         transform.localPosition = Vector3.zero;
 
         stayFire = stayTime;
+        stayMF = stayMT;
         
         //プレイヤーOBJにASを追加
         PlayerAS = this.gameObject.GetComponent<AudioSource>();
@@ -99,6 +102,11 @@ public class Player : MonoBehaviour {
             {
                 stayFire++;
             }
+            if (stayMF < stayMT)
+            {
+                stayMF++;
+            }
+
             Ray_RockOn();
             simplebullet_fire();
             missile_fire();
@@ -118,7 +126,7 @@ public class Player : MonoBehaviour {
 
     void missile_fire() //ミサイル？
     {
-        if (Input.GetButton(buttonName: "Fire2") && stayFire == stayTime)
+        if (Input.GetButton(buttonName: "Fire2") && stayMF == stayMT && targetOBJ!=null)
         {
             //ミサイルを発射＆発射したミサイルのSCを代入
             missile=Instantiate(missile_prefab,hassyakou.transform.position,hassyakou.transform.rotation)as GameObject;
@@ -127,7 +135,7 @@ public class Player : MonoBehaviour {
                 CloneMissileSC = missile.GetComponent<MissileSC>();
                 CloneMissileSC.Target = targetOBJ;
             }
-            stayFire = 0;
+            stayMF = 0;
         }
     }
 

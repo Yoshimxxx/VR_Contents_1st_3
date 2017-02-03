@@ -5,8 +5,9 @@ public class MissileSC : MonoBehaviour {
 
     public GameObject Target;//着弾目標
     public GameObject bakuhatsu;
+    int MissileLifetime=360;
 
-    private float _speed = 6.0f;    // 1秒間に進む距離
+    private float _speed = 3.0f;    // 1秒間に進む距離
     private float _rotSpeed = 180.0f;  // 1秒間に回転する角度
     
     // Use this for initialization
@@ -16,6 +17,11 @@ public class MissileSC : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (MissileLifetime <= 0)
+        {
+            Instantiate(bakuhatsu, transform.position, transform.rotation);
+            Destroy(this.gameObject);
+        }
         if (Target != null)
         {
             Vector3 vecTarget = Target.transform.position - transform.position; // ターゲットへのベクトル
@@ -38,6 +44,7 @@ public class MissileSC : MonoBehaviour {
 
         // 前進
         transform.position += transform.TransformDirection(0,0,5.0f) * _speed * Time.deltaTime;
+        MissileLifetime--;
     }
 
     void OnCollisionEnter(Collision collision)

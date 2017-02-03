@@ -221,8 +221,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 10
   speed: 0.5
+  MyScore: 100
   bakuhatsu: {fileID: 100000, guid: f600b4a5a289d0548842df7f27d883ea, type: 2}
   simple_bullet: {fileID: 1000012018930340, guid: 25bfec4582bf18843ad49347dab09b8b,
     type: 2}
   hassyakou: {fileID: 1000012189123812}
   Marker: {fileID: 1000012481244384, guid: a43339e5e5775eb43a58e9071d1cf7e9, type: 2}
+  kakoi: {fileID: 1000013761751804, guid: ff152a6eb22a649478529b3d90ccb142, type: 2}
