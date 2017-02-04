@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11400008}
   - 82: {fileID: 82000012552430786}
   - 114: {fileID: 114000011661154846}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Detonator-MultiExample
   m_TagString: Untagged
   m_Icon: {fileID: 0}

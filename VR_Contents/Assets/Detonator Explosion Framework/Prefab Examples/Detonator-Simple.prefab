@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Detonator-Simple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,8 +26,9 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .00763237476, y: .788020968, z: .01810956}
+  m_LocalPosition: {x: 0.0076323748, y: 0.78802097, z: 0.01810956}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -46,10 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 10
-  color: {r: .961538434, g: .665680468, b: 0, a: .549019635}
+  color: {r: 0.96153843, g: 0.66568047, b: 0, a: 0.54901963}
   explodeOnStart: 1
-  duration: 2.04645371
-  detail: 1.10993302
+  duration: 2.0464537
+  detail: 1.109933
   upwardsBias: 0
   destroyTime: 7
   useWorldSpace: 1
@@ -84,7 +85,6 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100000}
   m_IsPrefabParent: 1
-  m_IsExploded: 1
 --- !u!1002 &100100001
 EditorExtensionImpl:
   serializedVersion: 6

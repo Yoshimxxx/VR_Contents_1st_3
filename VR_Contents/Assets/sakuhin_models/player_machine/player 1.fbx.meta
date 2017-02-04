@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: 945bc3cd1e926b745bb12d128bc0c128
+timeCreated: 1486190609
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bullet
+    100002: Camera
+    100004: Camera.001
+    100006: Cylinder
+    100008: Cylinder.002
+    100010: Cylinder.005
+    100012: hane1
+    100014: hane2
+    100016: isu
+    100018: missile
+    100020: naibu
+    100022: naibu.001
+    100024: naibu.002
+    100026: pit
+    100028: pit2
+    100030: //RootNode
+    100032: sakuhin
+    100034: sokumen1
+    100036: "\u30B5\u30F3"
+    400000: bullet
+    400002: Camera
+    400004: Camera.001
+    400006: Cylinder
+    400008: Cylinder.002
+    400010: Cylinder.005
+    400012: hane1
+    400014: hane2
+    400016: isu
+    400018: missile
+    400020: naibu
+    400022: naibu.001
+    400024: naibu.002
+    400026: pit
+    400028: pit2
+    400030: //RootNode
+    400032: sakuhin
+    400034: sokumen1
+    400036: "\u30B5\u30F3"
+    2300000: bullet
+    2300002: Cylinder
+    2300004: Cylinder.002
+    2300006: Cylinder.005
+    2300008: hane1
+    2300010: hane2
+    2300012: isu
+    2300014: missile
+    2300016: naibu
+    2300018: naibu.001
+    2300020: naibu.002
+    2300022: pit
+    2300024: pit2
+    2300026: sakuhin
+    2300028: sokumen1
+    3300000: bullet
+    3300002: Cylinder
+    3300004: Cylinder.002
+    3300006: Cylinder.005
+    3300008: hane1
+    3300010: hane2
+    3300012: isu
+    3300014: missile
+    3300016: naibu
+    3300018: naibu.001
+    3300020: naibu.002
+    3300022: pit
+    3300024: pit2
+    3300026: sakuhin
+    3300028: sokumen1
+    4300000: naibu.002
+    4300002: naibu.001
+    4300004: pit2
+    4300006: sakuhin
+    4300008: pit
+    4300010: hane2
+    4300012: hane1
+    4300014: naibu
+    4300016: missile
+    4300018: bullet
+    4300020: isu
+    4300022: Cylinder.005
+    4300024: Cylinder
+    4300026: sokumen1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

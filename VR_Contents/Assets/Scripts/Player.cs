@@ -21,6 +21,7 @@ public class Player : MonoBehaviour {
     public MissileSC CloneMissileSC;
     GameObject hassyakou;//バルカン発射口？
     GameObject hassyakou2;//バルカン発射口2？
+    GameObject hassyakou3;//バルカン発射口3？
     public GameObject targetOBJ;//ロックオンしたオブジェクト
     public Sprite Rockon1, Rockon2;//ロックオン用画像
 
@@ -49,7 +50,7 @@ public class Player : MonoBehaviour {
     GameObject MarkerOBJ;//インスタンスしたマーカーの格納先
 
     GameObject RadarCamera;
-    int DAcount;//死亡アクションフレーム
+    int DAcount=0;//死亡アクションフレーム
 
     // Use this for initialization
     void Start ()
@@ -59,6 +60,7 @@ public class Player : MonoBehaviour {
 
         hassyakou = transform.FindChild("hassyakou").gameObject;
         hassyakou2 = transform.FindChild("hassyakou2").gameObject;
+        hassyakou3 = transform.FindChild("hassyakou2").gameObject;
 
         playerMove = GetComponent<PlayerMove>();
 
@@ -131,7 +133,7 @@ public class Player : MonoBehaviour {
         if (Input.GetButton(buttonName: "Fire2") && stayMF == stayMT && targetOBJ!=null)
         {
             //ミサイルを発射＆発射したミサイルのSCを代入
-            missile=Instantiate(missile_prefab,hassyakou.transform.position,hassyakou.transform.rotation)as GameObject;
+            missile=Instantiate(missile_prefab,hassyakou3.transform.position,hassyakou3.transform.rotation)as GameObject;
             if (targetOBJ != null)
             {
                 CloneMissileSC = missile.GetComponent<MissileSC>();
@@ -161,12 +163,12 @@ public class Player : MonoBehaviour {
                     PlayerAS.clip = rockon;
                     PlayerAS.Play();
                     Rockon.sprite = Rockon2;
-                }else if (rocktime == 1)//ターゲット補足時サーチ開始SE再生
+                }
+                else if (rocktime == 1)//ターゲット補足時サーチ開始SE再生
                 {
                     PlayerAS.clip = search;
                     PlayerAS.Play();
                 }
-                
             }
             else
             {
@@ -196,22 +198,23 @@ public class Player : MonoBehaviour {
             switch (DAcount) {
                 case 0:
                     start = false;
-                    Instantiate(bakuhatsu, transform.position + new Vector3(0.1f, 0.5f, 0.8f), transform.rotation);
+                    GameObject.Find("CreateComet").GetComponent<CreateComet>().startTF = false;
+                    Instantiate(bakuhatsu, transform.position + new Vector3(0.1f, 0f, 2.5f), transform.rotation);
                     break;
                 case 20:
-                    Instantiate(bakuhatsu, transform.position + new Vector3(-0.1f, 0.7f, 0.1f), transform.rotation);
+                    Instantiate(bakuhatsu, transform.position + new Vector3(-0.1f, 0f, 2.5f), transform.rotation);
                     break;
                 case 30:
-                    Instantiate(bakuhatsu, transform.position + new Vector3(-0.1f, 0.5f, 0.4f), transform.rotation);
-                    Instantiate(bakuhatsu, transform.position + new Vector3(0.2f, 0.5f, 0.6f), transform.rotation);
+                    Instantiate(bakuhatsu, transform.position + new Vector3(-0.1f, 0f, 2.5f), transform.rotation);
+                    Instantiate(bakuhatsu, transform.position + new Vector3(0.2f, 0f, 2.5f), transform.rotation);
                     break;
                 case 50:
-                    Instantiate(bakuhatsu, transform.position + new Vector3(0.05f, 0.5f, 0.2f), transform.rotation);
+                    Instantiate(bakuhatsu, transform.position + new Vector3(0.05f, 0f, 2.5f), transform.rotation);
                     break;
                 case 70:
-                    Instantiate(bakuhatsu, transform.position + new Vector3(-0.3f, 0.5f, 0.2f), transform.rotation);
-                    Instantiate(bakuhatsu, transform.position + new Vector3(0.1f, 0.5f, 0.4f), transform.rotation);
-                    Instantiate(bakuhatsu, transform.position + new Vector3(-0.1f, 0.5f, 0.9f), transform.rotation);
+                    Instantiate(bakuhatsu, transform.position + new Vector3(-0.3f, 0f, 2.5f), transform.rotation);
+                    Instantiate(bakuhatsu, transform.position + new Vector3(0.1f, 0f, 2.5f), transform.rotation);
+                    Instantiate(bakuhatsu, transform.position + new Vector3(-0.1f, 0f, 2.5f), transform.rotation);
                     break;
 
             }
@@ -226,11 +229,10 @@ public class Player : MonoBehaviour {
         if(collision.gameObject.name == "SComet(Clone)")
         {
             HP = 0;
-            GameObject.Find("CreateComet").GetComponent<CreateComet>().startTF = false;
         }else if (collision.gameObject.tag=="E_bullet")
         {
             //被弾時のダメージ処理や敵弾の消滅処理
-            HP -= 5;
+            HP -= 1;
         }
     }
 }

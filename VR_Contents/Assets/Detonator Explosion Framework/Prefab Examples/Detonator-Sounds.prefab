@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Detonator-Sounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,8 +27,9 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.2288876, y: -4.58802414, z: 38.6350098}
+  m_LocalPosition: {x: 19.228888, y: -4.588024, z: 38.63501}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -47,10 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 10
-  color: {r: 0, g: .953846157, b: .909822524, a: .556862772}
+  color: {r: 0, g: 0.95384616, b: 0.9098225, a: 0.5568628}
   explodeOnStart: 1
-  duration: 1.93924809
-  detail: 1.31115544
+  duration: 1.9392481
+  detail: 1.3111554
   upwardsBias: 0
   destroyTime: 7
   useWorldSpace: 1
@@ -112,9 +113,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8f03951fee9bec9478d1ec979ba44677, type: 3}
   - {fileID: 8300000, guid: 33cd429e81395944088573e40e271f18, type: 3}
   distanceThreshold: 80
-  minVolume: .400000006
+  minVolume: 0.4
   maxVolume: 1
-  rolloffFactor: .5
+  rolloffFactor: 0.5
 --- !u!1002 &11400003
 EditorExtensionImpl:
   serializedVersion: 6
@@ -129,7 +130,6 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100000}
   m_IsPrefabParent: 1
-  m_IsExploded: 1
 --- !u!1002 &100100001
 EditorExtensionImpl:
   serializedVersion: 6
