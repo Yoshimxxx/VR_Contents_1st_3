@@ -10,6 +10,7 @@ public class EnemySpone : MonoBehaviour {
     GameObject[] tagObjects;
 
     bool createflag = false;
+    int gamecount=0;
 
     // Use this for initialization
     void Start()
@@ -32,11 +33,16 @@ public class EnemySpone : MonoBehaviour {
 
     void Check(string tagname)
     {
-        tagObjects = GameObject.FindGameObjectsWithTag(tagname);
-        
-        if (tagObjects.Length <= 5)
+        if (gamecount % 300 == 0)
         {
-            createflag = false;
+            tagObjects = GameObject.FindGameObjectsWithTag(tagname);
+
+
+            if (tagObjects.Length <= 5)
+            {
+                createflag = false;
+            }
         }
+        gamecount++;
     }
 }

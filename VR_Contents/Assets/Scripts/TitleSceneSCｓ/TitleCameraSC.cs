@@ -28,6 +28,16 @@ public class TitleCameraSC : MonoBehaviour {
                     SceneManager.LoadScene("Main");
                 }
             }
+            else if (hit.collider.name == "endtext")//当たった物体
+            {
+                
+                raytime++;
+                if (raytime > 100)//一定時間以上視点を合わせると
+                {
+                    Player.Score = 0;
+                    SceneManager.LoadScene("Title");
+                }
+            }
             else
             {
                 raytime = 0;

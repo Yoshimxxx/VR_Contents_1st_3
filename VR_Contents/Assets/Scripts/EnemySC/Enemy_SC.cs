@@ -95,7 +95,7 @@ public class Enemy_SC : MonoBehaviour {
         if (HP <= 0)
         {
             Instantiate(bakuhatsu, transform.position, transform.rotation);
-            playerOBJ.gameObject.GetComponent<Player>().Score += MyScore;
+            Player.Score += MyScore;
             Destroy(Mykakoi);
             Destroy(MarkerOBJ);
             Destroy(this.gameObject);

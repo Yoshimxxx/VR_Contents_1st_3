@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
@@ -9,7 +10,7 @@ public class Player : MonoBehaviour {
     public float rotaF;
 
     public int HP=100;
-    public int Score = 0;
+    public static int Score = 0;
     public int rocktime=0;//ロックオン維持しているフレーム
 
     public int moveType = 0;
@@ -92,8 +93,16 @@ public class Player : MonoBehaviour {
         if (start != true)
         {
             start = GameObject.Find("CreateComet").GetComponent<CreateComet>().startTF;
-            hp.text = "準備中";
-            score.text = "敵を倒して報奨金を稼げ!";
+            if (HP > 0)
+            {
+                hp.text = "準備中";
+                score.text = "敵を倒して報奨金を稼げ!";
+            }
+            else
+            {
+                hp.text = "全システム停止";
+                score.text = "報奨確認に移ります";
+            }
         }
         else
         {
@@ -152,12 +161,12 @@ public class Player : MonoBehaviour {
             if (hit.collider.tag == "Enemy")//当たった物体がエネミー
             {
                 rocktime++;
-                if (rocktime > 100)//一定時間以上視点を合わせるとロックオン
+                if (rocktime > 50)//一定時間以上視点を合わせるとロックオン
                 {
                     targetOBJ = hit.collider.gameObject;
                     
                 }
-                else if (rocktime == 100)//目標フレーム到達時、ロックオン完了SE再生
+                else if (rocktime == 50)//目標フレーム到達時、ロックオン完了SE再生
                 {
                     PlayerAS.Stop();
                     PlayerAS.clip = rockon;
@@ -216,6 +225,10 @@ public class Player : MonoBehaviour {
                     Instantiate(bakuhatsu, transform.position + new Vector3(0.1f, 0f, 2.5f), transform.rotation);
                     Instantiate(bakuhatsu, transform.position + new Vector3(-0.1f, 0f, 2.5f), transform.rotation);
                     break;
+                case 80:
+                    SceneManager.LoadScene("Result");
+                    break;
+
 
             }
             
