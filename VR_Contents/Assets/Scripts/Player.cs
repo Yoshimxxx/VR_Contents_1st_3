@@ -49,6 +49,7 @@ public class Player : MonoBehaviour {
     GameObject MarkerOBJ;//インスタンスしたマーカーの格納先
 
     GameObject RadarCamera;
+    int DAcount;//死亡アクションフレーム
 
     // Use this for initialization
     void Start ()
@@ -112,6 +113,7 @@ public class Player : MonoBehaviour {
             missile_fire();
             RadarMarker();
         }
+        DeadAction();
 	}
 
     void simplebullet_fire() //バルカン？
@@ -187,11 +189,43 @@ public class Player : MonoBehaviour {
         MarkerOBJ.transform.rotation = Quaternion.Euler(90, transform.eulerAngles.y, 0);
     }
 
+    void DeadAction()
+    {
+        if (HP <= 0)
+        {
+            switch (DAcount) {
+                case 0:
+                    start = false;
+                    Instantiate(bakuhatsu, transform.position + new Vector3(0.1f, 0.5f, 0.8f), transform.rotation);
+                    break;
+                case 20:
+                    Instantiate(bakuhatsu, transform.position + new Vector3(-0.1f, 0.7f, 0.1f), transform.rotation);
+                    break;
+                case 30:
+                    Instantiate(bakuhatsu, transform.position + new Vector3(-0.1f, 0.5f, 0.4f), transform.rotation);
+                    Instantiate(bakuhatsu, transform.position + new Vector3(0.2f, 0.5f, 0.6f), transform.rotation);
+                    break;
+                case 50:
+                    Instantiate(bakuhatsu, transform.position + new Vector3(0.05f, 0.5f, 0.2f), transform.rotation);
+                    break;
+                case 70:
+                    Instantiate(bakuhatsu, transform.position + new Vector3(-0.3f, 0.5f, 0.2f), transform.rotation);
+                    Instantiate(bakuhatsu, transform.position + new Vector3(0.1f, 0.5f, 0.4f), transform.rotation);
+                    Instantiate(bakuhatsu, transform.position + new Vector3(-0.1f, 0.5f, 0.9f), transform.rotation);
+                    break;
+
+            }
+            
+
+            DAcount++;
+        }
+    }
+
     void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.name == "SComet(Clone)")
         {
-            start = false;
+            HP = 0;
             GameObject.Find("CreateComet").GetComponent<CreateComet>().startTF = false;
         }else if (collision.gameObject.tag=="E_bullet")
         {

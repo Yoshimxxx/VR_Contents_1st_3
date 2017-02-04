@@ -888,8 +888,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.3, z: 1.5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0.2}
 --- !u!33 &405607195
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2343,7 +2343,7 @@ MonoBehaviour:
   Score: 0
   rocktime: 0
   moveType: 0
-  bakuhatsu: {fileID: 0}
+  bakuhatsu: {fileID: 100000, guid: f600b4a5a289d0548842df7f27d883ea, type: 2}
   simplebullet: {fileID: 1000010351614210, guid: 004711cc9a66f234bb43572612a45da3,
     type: 2}
   missile_prefab: {fileID: 1000013890217800, guid: 1eecf38b722f7ad48919d7d1c1967007,
@@ -2530,6 +2530,21 @@ Prefab:
     - target: {fileID: 4000011290315458, guid: 0d7ad10ed20f3224ba5cfa4345920cfb, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65000011474047764, guid: 0d7ad10ed20f3224ba5cfa4345920cfb,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 65000011474047764, guid: 0d7ad10ed20f3224ba5cfa4345920cfb,
+        type: 2}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 65000011474047764, guid: 0d7ad10ed20f3224ba5cfa4345920cfb,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d7ad10ed20f3224ba5cfa4345920cfb, type: 2}
