@@ -32,6 +32,7 @@ public class Player : MonoBehaviour {
     public int stayMT=200;
 
     public GameObject cameraObject;
+    public GameObject camerap;
 
     private PlayerMove playerMove;
 
@@ -56,7 +57,8 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        cameraObject = GameObject.Find("Main Camera");
+        //cameraObject = GameObject.Find("Main Camera");
+        //camerap = GameObject.Find("CameraP");
         camera = cameraObject.GetComponent<Camera>();
 
         hassyakou = transform.FindChild("hassyakou").gameObject;
@@ -124,6 +126,12 @@ public class Player : MonoBehaviour {
             missile_fire();
             RadarMarker();
         }
+
+        if (Input.GetButton(buttonName: "Reset"))
+        {
+            cameraObject.transform.Rotate(cameraObject.transform.localEulerAngles.x - cameraObject.transform.localEulerAngles.x, cameraObject.transform.localEulerAngles.y - cameraObject.transform.localEulerAngles.y, cameraObject.transform.localEulerAngles.z - cameraObject.transform.localEulerAngles.z);
+        }
+
         DeadAction();
 	}
 
